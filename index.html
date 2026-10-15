@@ -303,6 +303,7 @@ footer small { color: var(--muted); font-size: .82rem; }
       <a href="#parstock">Parstock</a>
       <a href="#bug">The bug</a>
       <a href="#forecasting">Forecasting</a>
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
     </nav>
     <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">
@@ -518,9 +519,28 @@ footer small { color: var(--muted); font-size: .82rem; }
     </div>
   </section>
 
-  <!-- ================= MLB + PRINCIPLES ================= -->
-  <section class="block" style="padding-top:0">
+  <!-- ================= PROJECTS + PRINCIPLES ================= -->
+  <section class="block" id="projects" style="padding-top:0">
     <div class="wrap" style="display:grid;gap:clamp(48px,7vw,88px)">
+      <div style="display:grid;gap:20px">
+      <div class="proj">
+        <div>
+          <span class="lens ds"><i></i>Machine learning &middot; Cloud</span>
+          <h2 style="margin-top:10px;font-size:var(--step-2)">Produce photo classifier on AWS</h2>
+          <ul>
+            <li>Fine-tuned MobileNetV2 in TensorFlow on 2,492 real-world photos of 33 fruits and vegetables. On 558 held-out photos it is right 86.9% of the time, and the answer is in its top three 95.3% of the time.</li>
+            <li>Found 65 test photos that were copies of training photos and removed them before scoring, so the test number isn't inflated.</li>
+            <li>Exported to TensorFlow Lite at float16: 4.5 MB with no measurable accuracy loss. An int8 version was smaller but cost 1.4 points.</li>
+            <li>Served from AWS Lambda through a public URL, with the model in a private S3 bucket and an IAM role that can only read it. One script deploys, one tears down. About 0.2 s per photo once warm.</li>
+            <li>Weakest on look-alike root vegetables: radish, turnip and sweet potato are right 59&ndash;64% of the time.</li>
+          </ul>
+          <div class="tag-row" style="margin-top:14px">
+            <span class="tag">TensorFlow</span><span class="tag">TFLite</span><span class="tag">AWS Lambda</span><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">Python</span>
+          </div>
+        </div>
+        <a class="btn primary" href="https://uk7hatuj6h45wpq7kaqtj7t3xm0bhfxz.lambda-url.us-east-2.on.aws/" target="_blank" rel="noopener">Try it with a photo</a>
+      </div>
+
       <div class="proj">
         <div>
           <span class="lens ds"><i></i>Machine learning project</span>
@@ -532,6 +552,7 @@ footer small { color: var(--muted); font-size: .82rem; }
           </ul>
         </div>
         <a class="btn" href="https://github.com/raghavtippireddy/MLB-Player-Performance-and-Contract-Predictor" target="_blank" rel="noopener">View code on GitHub</a>
+      </div>
       </div>
 
       <div>
